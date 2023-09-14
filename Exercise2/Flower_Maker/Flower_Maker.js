@@ -1,6 +1,4 @@
-let currentFlowerType;
-
-function setup() {
+                                                                                                                                                        let currentFlowerType;function setup() {
   createCanvas(800, 600);
   
   strokeWeight(2);
