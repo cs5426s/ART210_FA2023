@@ -25,7 +25,6 @@ function setup() {
 
 function draw() {
   background(wall);
-
   if (state === "doors") {
     drawDoors();
   } else {
@@ -45,7 +44,7 @@ function drawDoors() {
 
 function showImage() {
   // Display state image based on the door clicked
-  image(stateImages[doorClicked], 200, 190, 650, 550);
+  image(stateImages[doorClicked], 200, 120, 650, 550);
 }
 
 function mousePressed() {
