@@ -6,7 +6,7 @@ function setup() {
   
   attractor = createVector(width / 2, height / 2);
   
-  for (let i = 0; i < 150; i ++) {
+  for (let i = 0; i < 20; i ++) {
     agents.push(new Agent());
   }
 }
@@ -41,9 +41,27 @@ class Agent {
   wander() {
     let angle = noise(this.noiseOffset) * TWO_PI * 2;
     let force = p5.Vector.fromAngle(angle);
-    force.mult(0.2);
+    force.mult(0.02);
     this.acc.add(force);
     this.noiseOffset += 0.02;
   }
   
+  update() {
+    this.vel.add(this.acc);
+    this.pos.add(this.vel);
+    this.acc.mult(0);
+    
+    if (this.pos.x > width || this.pos.x < 0) {
+      this.vel.x *= -1;
+    } 
+    if (this.pos.y > height || this.pos.y < 0) {
+      this.vel.y *= -1;
+    }
+  }
+  
+  show() {
+    fill(255);
+    noStroke();
+    ellipse(this.pos.x, this.pos.y, 10);
+  }
 }
