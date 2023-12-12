@@ -30,12 +30,12 @@ function setup() {
   buttonOutside.mousePressed(goBackOutside);
   buttonOutside.hide();
 
-  // Initialize slider here
+  //Initialize slider here
   angleMode(DEGREES);
   slider = createSlider(5, 30, 10);
   slider.size(400);
   slider.position(530, height - 30);
-  //slider.style('height', '200px'); // Adjust the height here
+  //slider.style('height', '200px'); //Adjust the height here
 }
 
 function draw() {
@@ -49,7 +49,7 @@ function draw() {
 function drawOutsideScene() {
 background(0);
  
-  //House code
+//House code
   let x = width / 2;
   let y = height / 2;
   fill('darkred');
@@ -75,7 +75,7 @@ background(0);
   //Doorknob
   fill(100);
   ellipse(x + 340, y + 400, 15);
-  //End of house code
+//End of house code
   //Create a new snowflake at random intervals
   if (frameCount % 10 === 0) {
     let x = random(width);
@@ -100,7 +100,7 @@ background(0);
   for (let i = 0; i < snowLayers.length; i++) {
     snowLayers[i].display();
   }
-  // Display the snowman
+  //Display the snowman
   snowman.display();
   slider.hide();
 }
@@ -108,7 +108,7 @@ background(0);
 function drawInsideScene() {
   background(dog);
 
-  // My Fire Code
+  //My Fire Code
   let p = new Particle();
   particles.push(p);
   for (let i = 0; i < particles.length; i++) {
@@ -126,15 +126,15 @@ function drawInsideScene() {
   //textAlign(CENTER);
   text('This Changes the Size of the Fire ->', width / 4, 885);
   
-  // Display the slider and related elements only when state is 1
+  //Display the slider and related elements only when state is 1
   if (state === 1) {
     angleMode(DEGREES);
     slider.show();
-    // Add any other elements you want to display in state === 1 here
+    //Add any other elements you want to display in state === 1 here
   } else {
-    // Manually hide the slider by modifying its style
+    //Manually hide the slider by modifying its style
     slider.style('display', 'none');
-    // Hide any other elements that should not be displayed in state === 1
+    //Hide any other elements that should not be displayed in state === 1
   }
 }
 
@@ -149,7 +149,8 @@ function goBackOutside() {
   buttonOutside.hide();
   button.show();
 }
- 
+
+//Start of Chatgpt code
 class Snowflake {
   constructor(x, y, big, fast) {
     this.x = x;
